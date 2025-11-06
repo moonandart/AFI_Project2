@@ -1,22 +1,20 @@
 # =========================================
-# 🧠 Liputan6 Summarization Project — .gitignore
+# 🧠 AFI_Project2 — Liputan6 Summarization Project
 # =========================================
 
-# Ignore data files (raw & processed)
+# --- Data files (skip large datasets)
 data/
 Data/
 *.csv
 *.json
+*.xlsx
+*.ods
 *.zip
 *.gz
 *.tar
 *.7z
-*.xlsx
-*.ods
 
-# Ignore model checkpoints & outputs
-Outputs/
-outputs/
+# --- Model checkpoints and large outputs
 models/
 checkpoints/
 *.pt
@@ -27,7 +25,28 @@ checkpoints/
 *.npy
 *.npz
 
-# Ignore intermediate Colab or temp files
+# --- Outputs folder rules ---
+# Ignore everything in Outputs by default
+Outputs/**
+# Allow folder itself to exist
+!Outputs/
+# Allow small generated analysis artifacts
+!Outputs/eda_summary_stats.json
+!Outputs/sample_100.csv
+!Outputs/top_words.csv
+!Outputs/top_words_bar.png
+!Outputs/wordcloud.png
+# Optional: keep a .gitkeep if folder empty
+!Outputs/.gitkeep
+
+# --- Colab & Google Drive paths
+drive/
+content/
+*/MyDrive/
+*/Tugas/
+*/Proyek/
+
+# --- Temp & cache files
 *.ipynb_checkpoints/
 __pycache__/
 *.pyc
@@ -36,21 +55,11 @@ __pycache__/
 *.log
 *.DS_Store
 
-# Ignore Google Drive mount path (Colab)
-drive/
-content/
-*/MyDrive/
-*/Tugas/
-*/Proyek/
-
-# Ignore large generated visualizations
-*.png
-*.jpg
-*.jpeg
+# --- Visualizations & plots (only if large)
 *.svg
 *.pdf
 
-# Ignore environment or virtualenv files
+# --- Environments
 .env
 .venv/
 env/
@@ -58,52 +67,14 @@ venv/
 *.egg-info/
 pip-wheel-metadata/
 
-# Ignore system and IDE files
+# --- IDE & system files
 .vscode/
 .idea/
 *.swp
 *.bak
 
 # =========================================
-# 🗂️ Outputs Folder Rules
-# =========================================
-
-# Ignore all files inside Outputs by default
-Outputs/*
-
-# But keep important small analysis files
-!Outputs/eda_summary_stats.json
-!Outputs/sample_100.csv
-!Outputs/top_words.csv
-!Outputs/top_words_bar.png
-!Outputs/wordcloud.png
-
-# Ignore model folders and large data
-Outputs/models/
-Outputs/*.csv
-!Outputs/sample_100.csv
-
-# =========================================
-# 🗂️ Outputs Folder Rules
-# =========================================
-
-# Ignore all files inside Outputs by default
-Outputs/*
-
-# But keep important small analysis files
-!Outputs/eda_summary_stats.json
-!Outputs/sample_100.csv
-!Outputs/top_words.csv
-!Outputs/top_words_bar.png
-!Outputs/wordcloud.png
-
-# Ignore model folders and large data
-Outputs/models/
-Outputs/*.csv
-!Outputs/sample_100.csv
-
-# =========================================
-# ✅ Exceptions (keep these files)
+# ✅ Exceptions (keep these essential files)
 # =========================================
 !README.md
 !requirements.txt
