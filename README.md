@@ -1,7 +1,7 @@
 
 <div align="center">
   <img src="Outputs/wordcloud.png" alt="Liputan6 Summarization Banner" width="800">
-  <h1>🇮🇩 Liputan6 Summarization Project</h1>
+  <h1>Liputan6 Summarization Project</h1>
   <p><em>Indonesian news summarization with BERT2BERT — Google Colab (T4) optimized</em></p>
 
   <!-- Badges -->
@@ -20,7 +20,7 @@
 
 ---
 
-# 🇮🇩 Liputan6 Summarization Project — IndoBERT2BERT Fine-tuning (Google Colab T4)
+# Liputan6 Summarization Project — IndoBERT2BERT Fine-tuning
 
 End-to-end pipeline for Indonesian **news summarization** using the **Liputan6 dataset** and **BERT2BERT model fine-tuning** on Google Colab (T4 GPU).  
 This repository consists of **three stages**, each represented by a Google Colab notebook:
@@ -38,11 +38,11 @@ This repository consists of **three stages**, each represented by a Google Colab
 - **2. Preprocessing** → [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/moonandart/AFI_Project2/blob/main/notebooks/2Liputan6_Preprocessing_Tugas_CLEAN.ipynb)  
 - **3. Training (20% + ROUGE)** → [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/moonandart/AFI_Project2/blob/main/notebooks/3Liputan6_Summarization_Bert2Bert_TRAIN_20PCT_withROUGE.ipynb)
 
-> Kamu bisa menaruh notebook di folder `notebooks/` seperti struktur di bawah agar tautan tetap valid.
+> Simpan notebook di folder `notebooks/` seperti struktur di bawah agar tautan tetap valid.
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 ```
 AFI_Project2/
 ├── data/
@@ -64,11 +64,11 @@ AFI_Project2/
 
 ---
 
-## 🧠 1️⃣ Explorative Data Analysis (EDA)
+## 1️⃣ Explorative Data Analysis (EDA)
 **File:** `notebooks/1Liputan6_EDA_Preprocessing_Tugas.ipynb`  
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/moonandart/AFI_Project2/blob/main/notebooks/1Liputan6_EDA_Preprocessing_Tugas.ipynb)
 
-### 🔍 Overview
+### Overview
 Exploratory Data Analysis untuk memahami struktur, distribusi teks, dan karakteristik dataset Liputan6.  
 Termasuk:
 - Statistik dataset & missing values  
@@ -76,7 +76,7 @@ Termasuk:
 - **Frekuensi kata paling umum** dan **WordCloud visualisasi**  
 - Simpan hasil ke Google Drive folder `Outputs`
 
-### 📊 Outputs
+### Outputs
 - `hist_text_length.png` — distribusi panjang teks  
 - `top_words_bar.png` — 20 kata paling sering  
 - `wordcloud.png` — visualisasi WordCloud  
@@ -85,11 +85,11 @@ Termasuk:
 
 ---
 
-## 🧹 2️⃣ Data Cleaning & Preprocessing
+## 2️⃣ Data Cleaning & Preprocessing
 **File:** `notebooks/2Liputan6_Preprocessing_Tugas_CLEAN.ipynb`  
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/moonandart/AFI_Project2/blob/main/notebooks/2Liputan6_Preprocessing_Tugas_CLEAN.ipynb)
 
-### 🧾 Purpose
+### Purpose
 Membersihkan dan menyiapkan data untuk pelatihan model summarization.  
 Langkah-langkah:
 - Mount Google Drive & setup `BASE_DIR`
@@ -97,22 +97,22 @@ Langkah-langkah:
 - Drop duplikasi dan nilai kosong
 - Simpan data bersih ke `/Data/liputan6_clean_ready.csv`
 
-### 🧱 Output Files
+### Output Files
 - `liputan6_clean_ready.csv` — dataset siap latih  
 - `clean_sample.csv` — contoh hasil cleaning  
 
 ---
 
-## 🤖 3️⃣ Model Fine-tuning — BERT2BERT Summarization (20% Data + ROUGE)
+## 3️⃣ Model Fine-tuning — BERT2BERT Summarization (20% Data + ROUGE)
 **File:** `notebooks/3Liputan6_Summarization_Bert2Bert_TRAIN_20PCT_withROUGE.ipynb`  
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/moonandart/AFI_Project2/blob/main/notebooks/3Liputan6_Summarization_Bert2Bert_TRAIN_20PCT_withROUGE.ipynb)
 
-### 🎯 Objective
+### Objective
 Melatih model summarization bahasa Indonesia dengan fine-tuning  
 [`cahya/bert2bert-indonesian-summarization`](https://huggingface.co/cahya/bert2bert-indonesian-summarization)  
 menggunakan dataset Liputan6 yang telah dibersihkan.
 
-### ⚙️ Configurations
+### Configurations
 | Parameter | Value | Description |
 |------------|--------|-------------|
 | `MODEL_NAME` | `cahya/bert2bert-indonesian-summarization` | base model |
@@ -123,14 +123,14 @@ menggunakan dataset Liputan6 yang telah dibersihkan.
 | `MAX_INPUT_LEN` | `512` | panjang maksimum input |
 | `MAX_TARGET_LEN` | `128` | panjang maksimum ringkasan |
 
-### 🧠 Training Pipeline
+### Training Pipeline
 - Split data train/validation (95% / 5%)  
 - Tokenisasi dengan padding dan truncation  
 - Fine-tuning menggunakan `Seq2SeqTrainer`  
 - Evaluasi performa dengan metrik **ROUGE**  
 - Simpan model fine-tuned ke folder `Outputs/models`
 
-### 📏 ROUGE Example
+### ROUGE Example
 ```json
 {{
   "eval_loss": 2.173,
@@ -143,7 +143,7 @@ menggunakan dataset Liputan6 yang telah dibersihkan.
 
 ---
 
-### 📊 Final Evaluation Results (20% Data, 1 Epoch)
+### Final Evaluation Results (20% Data, 1 Epoch)
 
 | Metric | Score | Interpretation |
 |---------|--------|----------------|
@@ -152,23 +152,23 @@ menggunakan dataset Liputan6 yang telah dibersihkan.
 | **ROUGE-L** | 🟩 0.4754 | Ringkasan memiliki urutan kalimat yang natural dan koheren |
 | **ROUGE-Lsum** | 🟩 0.4756 | Struktur kalimat ringkasan konsisten dengan referensi |
 
-✅ Nilai **ROUGE-1 di atas 0.5** menunjukkan model sudah cukup matang untuk tugas summarization berita Indonesia.  
+Nilai **ROUGE-1 di atas 0.5** menunjukkan model sudah cukup matang untuk tugas summarization berita Indonesia.  
 **ROUGE-L sekitar 0.47** menandakan model menjaga urutan kalimat dan alur ringkasan dengan baik.
 
 ---
 
-### 📉 Training & Validation Loss Analysis
+### Training & Validation Loss Analysis
 
 | Epoch | Training Loss | Validation Loss | Interpretation |
 |--------|----------------|----------------|----------------|
 | 1 | 0.2841 | 0.2350 | Kedua loss menurun stabil dan tidak menunjukkan gejala overfitting |
 
-📌 *Karena perbedaan antara Training dan Validation Loss kecil, model dianggap generalisasi dengan baik.*  
+*Karena perbedaan antara Training dan Validation Loss kecil, model dianggap generalisasi dengan baik.*  
 Model sudah **konvergen** — menandakan fine-tuning berjalan optimal walaupun hanya dengan **20% data dan 1 epoch**.
 
 ---
 
-## ⚡️ GPU Optimization (T4)
+## GPU Optimization (T4)
 Semua notebook telah dioptimasi untuk Google Colab T4 GPU:
 ```python
 fp16 = True
@@ -186,7 +186,7 @@ save_total_limit = 2
 
 ---
 
-## 🧭 Cara Menjalankan di Colab
+## Cara Menjalankan di Colab
 1. Jalankan **Notebook 1 (EDA)** → untuk eksplorasi & visualisasi  
 2. Jalankan **Notebook 2 (Preprocessing)** → untuk cleaning & simpan dataset  
 3. Jalankan **Notebook 3 (Training)** → untuk fine-tuning model & evaluasi ROUGE  
@@ -198,14 +198,14 @@ Semua notebook otomatis menyimpan hasil ke:
 
 ---
 
-## 🧑‍💻 Author
-**Dikembangkan oleh:** Gyeran Huray  
+## Author
+**Dikembangkan oleh:** Arismunandar  
 **Tools:** Hugging Face Transformers, PyTorch, ROUGE, Pandas, Matplotlib  
 **Environment:** Google Colab (T4 GPU)
 
 ---
 
-## 📚 References
+## References
 - [Cahya Wirawan — IndoBERT2BERT Summarization Model](https://huggingface.co/cahya/bert2bert-indonesian-summarization)  
 - [IndoNLG: Indonesian Natural Language Generation Benchmark](https://github.com/IndoNLP/indonlg)  
 - [Hugging Face Transformers Documentation](https://huggingface.co/docs)
