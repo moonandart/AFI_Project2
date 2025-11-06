@@ -65,6 +65,44 @@ pip-wheel-metadata/
 *.bak
 
 # =========================================
+# 🗂️ Outputs Folder Rules
+# =========================================
+
+# Ignore all files inside Outputs by default
+Outputs/*
+
+# But keep important small analysis files
+!Outputs/eda_summary_stats.json
+!Outputs/sample_100.csv
+!Outputs/top_words.csv
+!Outputs/top_words_bar.png
+!Outputs/wordcloud.png
+
+# Ignore model folders and large data
+Outputs/models/
+Outputs/*.csv
+!Outputs/sample_100.csv
+
+# =========================================
+# 🗂️ Outputs Folder Rules
+# =========================================
+
+# Ignore all files inside Outputs by default
+Outputs/*
+
+# But keep important small analysis files
+!Outputs/eda_summary_stats.json
+!Outputs/sample_100.csv
+!Outputs/top_words.csv
+!Outputs/top_words_bar.png
+!Outputs/wordcloud.png
+
+# Ignore model folders and large data
+Outputs/models/
+Outputs/*.csv
+!Outputs/sample_100.csv
+
+# =========================================
 # ✅ Exceptions (keep these files)
 # =========================================
 !README.md
