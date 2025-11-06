@@ -1,0 +1,74 @@
+# =========================================
+# 🧠 Liputan6 Summarization Project — .gitignore
+# =========================================
+
+# Ignore data files (raw & processed)
+data/
+Data/
+*.csv
+*.json
+*.zip
+*.gz
+*.tar
+*.7z
+*.xlsx
+*.ods
+
+# Ignore model checkpoints & outputs
+Outputs/
+outputs/
+models/
+checkpoints/
+*.pt
+*.bin
+*.h5
+*.pkl
+*.joblib
+*.npy
+*.npz
+
+# Ignore intermediate Colab or temp files
+*.ipynb_checkpoints/
+__pycache__/
+*.pyc
+*.pyo
+*.tmp
+*.log
+*.DS_Store
+
+# Ignore Google Drive mount path (Colab)
+drive/
+content/
+*/MyDrive/
+*/Tugas/
+*/Proyek/
+
+# Ignore large generated visualizations
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.pdf
+
+# Ignore environment or virtualenv files
+.env
+.venv/
+env/
+venv/
+*.egg-info/
+pip-wheel-metadata/
+
+# Ignore system and IDE files
+.vscode/
+.idea/
+*.swp
+*.bak
+
+# =========================================
+# ✅ Exceptions (keep these files)
+# =========================================
+!README.md
+!requirements.txt
+!notebooks/
+!*.ipynb
+!LICENSE
